@@ -69,7 +69,7 @@ function createTimestamp() {
     //step 2: set its innerHTML to the current time
     const timestamp = new Date().toLocaleTimeString();
     const timestampSpan = document.createElement("span");
-    timestampSpan.innerHTML = `${timestamp}`;
+    timestampSpan.innerHTML = `- ${timestamp}`;
     //step 3: use appendChild() to add to the span
     statusOutput.appendChild(timestampSpan);
 
@@ -84,6 +84,7 @@ function createTimestamp() {
 // Define and call the highlightListItems() function here so it runs on load.
 // You will need to use document.querySelectorAll('li') and a loop structure
 // (like a 'for' loop or 'forEach') to iterate over all list items [3-5].
+
 
 /* ======================================= */
 // --- Tasks 5, 6, 7 & 8: Toggle Functionality ---

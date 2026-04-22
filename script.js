@@ -32,6 +32,14 @@ document.addEventListener("DOMContentLoaded", function() {
 //and assigns it to the value "status-toggle".
 toggleButton.setAttribute("data-action", "status-toggle");
 
+
+
+
+//call the function to run on load
+highlightListItems();
+
+/* ======================================= */
+// --- Tasks 5, 6, 7 & 8: Toggle Functionality ---
 // Task 5: The Toggle Button
 //step 1: create function named toggleStatus()
 function toggleStatus(e) {
@@ -40,7 +48,7 @@ function toggleStatus(e) {
 
     //step 2: select the div with id "status-output"
     const statusDiv = document.getElementById("status-output");
-    //use classList.toggle() to add or remove .hidden
+    //step 3: use classList.toggle() to add or remove .hidden
     statusDiv.classList.toggle("hidden");
     //update the button text based on the current state of the statusDiv
     if (statusDiv.classList.contains("hidden")) {
@@ -78,6 +86,11 @@ function createTimestamp() {
 
 }
 
+// Define the functions (e.g., toggleStatus, createTimestamp) and event listeners
+//completed in line 37 and 65
+
+// here to handle the click event on the toggleButton [6, 7].
+
 
 /* ======================================= */
 // --- Task 9: Looping and Applying Changes ---
@@ -94,14 +107,6 @@ function highlightListItems() {
         item.style.color = "blue";
     })
 }
-
-//call the function to run on load
-highlightListItems();
-
-/* ======================================= */
-// --- Tasks 5, 6, 7 & 8: Toggle Functionality ---
-// Define the functions (e.g., toggleStatus, createTimestamp) and event listeners
-// here to handle the click event on the toggleButton [6, 7].
 
 /* ======================================= */
 // --- Task 10: Timed Animation ---

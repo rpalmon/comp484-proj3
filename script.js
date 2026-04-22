@@ -35,8 +35,7 @@ toggleButton.setAttribute("data-action", "status-toggle");
 
 
 
-//call the function to run on load
-highlightListItems();
+
 
 /* ======================================= */
 // --- Tasks 5, 6, 7 & 8: Toggle Functionality ---
@@ -108,8 +107,37 @@ function highlightListItems() {
     })
 }
 
+//call the function to run on load
+highlightListItems();
+
 /* ======================================= */
 // --- Task 10: Timed Animation ---
 // Define the startFlashing() and stopFlashing() functions using
 // setInterval() and clearInterval() [8, 9], and bind them to the
 // timerButton using addEventListener for 'click' and 'dblclick' [10].
+
+//Step 1: create function startFlashing()
+function startFlashing() {
+    //uses setInterval to toggle the .hidden class
+    //on the control-panel every 500ms.
+    //Store the ID returned by setInterval in the global variable
+    if (intervalId !== null) return; // prevent stacking multiple intervals
+    intervalId = setInterval(() => {
+        controlPanel.classList.toggle("hidden");
+    }, 500);
+    console.log("Flashing started", intervalId);
+}
+
+//Step 2: create function stopFlashing()
+function stopFlashing() {
+    //uses clearInterval() to stop the animation using the global interval ID
+    clearInterval(intervalId);
+    console.log("Flashing stopped", intervalId);
+    intervalId = null;
+}
+
+//Step 3: bind startFlashing to timer-button click event
+timerButton.addEventListener("click", startFlashing);
+
+//Step 4: bind stopFlashing to timer-button double-click event
+timerButton.addEventListener("dblclick", stopFlashing);

@@ -53,12 +53,30 @@ function toggleStatus(e) {
         toggleButton.innerHTML = "Hide Status";
         //Task 7: If visible set main-title element backgroundColor to yellow
         mainTitle.style.backgroundColor = "yellow";
+        createTimestamp(); // Call the function to create a timestamp when status is shown
         console.log("Status shown");
     }
     
 }
 //step 4: add an event listener to the toggle-button that runs toggleStatus on a click
 toggleButton.addEventListener("click", toggleStatus);
+
+// Task 8 Dynamic Element Creation
+function createTimestamp() {
+    //called inside of toggleStatus() whenever status is shown
+    //step 1: create a new span
+    document.createElement("span");
+    //step 2: set its innerHTML to the current time
+    const timestamp = new Date().toLocaleTimeString();
+    const timestampSpan = document.createElement("span");
+    timestampSpan.innerHTML = `${timestamp}`;
+    //step 3: use appendChild() to add to the span
+    statusOutput.appendChild(timestampSpan);
+
+    //make span appear as nice looking list
+    timestampSpan.style.display = "block";
+
+}
 
 
 /* ======================================= */

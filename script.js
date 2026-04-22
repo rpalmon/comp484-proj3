@@ -27,6 +27,32 @@ document.addEventListener("DOMContentLoaded", function() {
 // Write the code here to use setAttribute() on the toggleButton element
 // to add the required 'data-action' attribute.
 
+//what this code does:
+//This code adds an attibute called "data-action" to the toggleButton element 
+//and assigns it to the value "status-toggle".
+toggleButton.setAttribute("data-action", "status-toggle");
+
+// Task 5: The Toggle Button
+//step 1: create function named toggleStatus()
+function toggleStatus() {
+    //step 2: select the div with id "status-output"
+    const statusDiv = document.getElementById("status-output");
+    //use classList.toggle() to add or remove .hidden
+    statusDiv.classList.toggle("hidden");
+    //update the button text based on the current state of the statusDiv
+    if (statusDiv.classList.contains("hidden")) {
+        toggleButton.innerHTML = "Show Status";
+        console.log("Status hidden");
+    } else {
+        toggleButton.innerHTML = "Hide Status";
+        console.log("Status shown");
+    }
+    
+}
+//step 4: add an event listener to the toggle-button that runs toggleStatus on a click
+toggleButton.addEventListener("click", toggleStatus);
+
+
 /* ======================================= */
 // --- Task 9: Looping and Applying Changes ---
 // Define and call the highlightListItems() function here so it runs on load.

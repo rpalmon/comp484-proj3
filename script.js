@@ -34,7 +34,10 @@ toggleButton.setAttribute("data-action", "status-toggle");
 
 // Task 5: The Toggle Button
 //step 1: create function named toggleStatus()
-function toggleStatus() {
+function toggleStatus(e) {
+    //Task 6: prevent default behavior of the button click
+    e.preventDefault();
+
     //step 2: select the div with id "status-output"
     const statusDiv = document.getElementById("status-output");
     //use classList.toggle() to add or remove .hidden
@@ -42,9 +45,14 @@ function toggleStatus() {
     //update the button text based on the current state of the statusDiv
     if (statusDiv.classList.contains("hidden")) {
         toggleButton.innerHTML = "Show Status";
+        //If hidden reset the background color to empty string
+        mainTitle.style.backgroundColor = "";
+        
         console.log("Status hidden");
     } else {
         toggleButton.innerHTML = "Hide Status";
+        //Task 7: If visible set main-title element backgroundColor to yellow
+        mainTitle.style.backgroundColor = "yellow";
         console.log("Status shown");
     }
     

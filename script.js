@@ -84,7 +84,19 @@ function createTimestamp() {
 // Define and call the highlightListItems() function here so it runs on load.
 // You will need to use document.querySelectorAll('li') and a loop structure
 // (like a 'for' loop or 'forEach') to iterate over all list items [3-5].
+//start of task 9
+function highlightListItems() {
+    //step 1: select all list items using querySelectorAll
+    const listItems = document.querySelectorAll('li');
+    //step 2: use a for loop or forEach to iterate through the list
+    listItems.forEach((item) => {
+        //step 3: set the inline color of each item to blue
+        item.style.color = "blue";
+    })
+}
 
+//call the function to run on load
+highlightListItems();
 
 /* ======================================= */
 // --- Tasks 5, 6, 7 & 8: Toggle Functionality ---
